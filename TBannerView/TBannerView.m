@@ -107,7 +107,7 @@
 
 - (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController {
     // The selected item reflected in the page indicator.
-    return self.currentPage;;
+    return self.currentPage;
 }
 
 #pragma mark - 
