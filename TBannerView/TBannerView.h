@@ -2,7 +2,7 @@
 //  TBannerView.h
 //  TBannerViewDemo
 //
-//  Created by Riverview Labs on 4/3/15.
+
 //  Copyright (c) 2015 Tulakshana. All rights reserved.
 //
 
