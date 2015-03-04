@@ -18,7 +18,8 @@
 @optional
 - (void)tBannerView:(TBannerView *)bannerView didSelectedAtIndex:(int)index;
 - (int)tBannerViewAutoPlayTimeInterval:(TBannerView *)bannerView;
-
+- (UIColor *)tBannerViewPageIndicatorTintColor:(TBannerView *)bannerView;
+- (UIColor *)tBannerViewCurrentPageIndicatorTintColor:(TBannerView *)bannerView;
 
 @end
 

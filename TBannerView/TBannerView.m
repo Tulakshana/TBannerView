@@ -62,6 +62,8 @@
         self.pageControl.view.frame = self.bounds;
         self.pageControl.dataSource = self;
         [self addSubview:self.pageControl.view];
+        
+        [self setupPageControlAppearance];
     }
     
     if (self.timer == nil) {
@@ -105,7 +107,7 @@
 
 - (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController {
     // The selected item reflected in the page indicator.
-    return 0;
+    return self.currentPage;;
 }
 
 #pragma mark - 
@@ -171,6 +173,17 @@
     
     if ([self.delegate respondsToSelector:@selector(tBannerView:didSelectedAtIndex:)]) {
         [self.delegate tBannerView:self didSelectedAtIndex:(int)button.tag];
+    }
+}
+
+- (void)setupPageControlAppearance
+{
+    UIPageControl *pageControlAppearance = [UIPageControl appearanceWhenContainedIn:[UIPageViewController class], nil];
+    if ([self.delegate respondsToSelector:@selector(tBannerViewPageIndicatorTintColor:)]) {
+        pageControlAppearance.pageIndicatorTintColor = [self.delegate tBannerViewPageIndicatorTintColor:self];
+    }
+    if ([self.delegate respondsToSelector:@selector(tBannerViewCurrentPageIndicatorTintColor:)]) {
+        pageControlAppearance.currentPageIndicatorTintColor = [self.delegate tBannerViewCurrentPageIndicatorTintColor:self];
     }
 }
 
